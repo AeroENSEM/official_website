@@ -11,17 +11,17 @@
 # -------------------------------------------------------------------------------------
 
 # website title
-title = "AeroENSEM Official Website"
+title = "AéroENSEM"
 # Hostname (and path) to the root
-baseURL = "https://aeroensem.github.io/official_website/"
+baseURL = "https://aeroensem.club/"
 # theme list
 theme = ["FixIt"] # enable in your site config file
 # determines default content language ["en", "zh-cn", "fr", "pl", ...]
-defaultContentLanguage = "en"
+defaultContentLanguage = "fr"
 # language code ["en", "zh-CN", "fr", "pl", ...]
-languageCode = "en"
+languageCode = "fr"
 # language name ["English", "简体中文", "Français", "Polski", ...]
-languageName = "English"
+languageName = "Français"
 # whether to include Chinese/Japanese/Korean
 hasCJKLanguage = false
 # copyright description used only for seo schema
@@ -68,56 +68,34 @@ quality = 75
 [menus]
 
 [[menus.main]]
-identifier = "archives"
-parent = ""
-# you can add extra information before the name (HTML format is supported), such as icons
-pre = ""
-# you can add extra information after the name (HTML format is supported), such as icons
-post = ""
-name = "Archives"
-url = "/archives/"
-# title will be shown when you hover on this menu link
-title = ""
+identifier = "posts"
+name = "Actualités"
+url = "/posts/"
 weight = 1
 
-# FixIt 0.2.14 | NEW add user-defined content to menu items
-[menus.main.params]
-# add css class to a specific menu item
-class = ""
-# whether set as a draft menu item whose function is similar to a draft post/page
-draft = false
-# FixIt 0.2.16 | NEW add fontawesome icon to a specific menu item
-icon = "fa-solid fa-archive"
-# FixIt 0.2.16 | NEW set menu item type, optional values: ["mobile", "desktop"]
-type = ""
-# FixIt 0.3.9 | NEW whether to show the submenu item divider line
-divided = false
-
 [[menus.main]]
-identifier = "categories"
-parent = ""
-pre = ""
-post = ""
-name = "Categories"
-url = "/categories/"
-title = ""
+identifier = "projets"
+name = "Projets"
+url = "/projets/"
 weight = 2
 
-[menus.main.params]
-icon = "fa-solid fa-folder-tree"
-
 [[menus.main]]
-identifier = "tags"
-parent = ""
-pre = ""
-post = ""
-name = "Tags"
-url = "/tags/"
-title = ""
+identifier = "workshops"
+name = "Workshops"
+url = "/workshops/"
 weight = 3
 
-[menus.main.params]
-icon = "fa-solid fa-tags"
+[[menus.main]]
+identifier = "equipe"
+name = "Équipe"
+url = "/equipe/"
+weight = 4
+
+[[menus.main]]
+identifier = "partenaires"
+name = "Partenaires"
+url = "/partenaires/"
+weight = 5
 
 # -------------------------------------------------------------------------------------
 # Related content Configuration
@@ -283,14 +261,12 @@ priority = 0.5
 [permalinks]
 
 [permalinks.page]
-# posts = "/p/:slugorcontentbasename"
+posts = "/actualites/:slug/"
 
 [permalinks.section]
-# posts = "/posts/:slugorcontentbasename"
-
-[permalinks.taxonomy]
-
-[permalinks.term]
+posts = "/actualites/:slug/"
+projets = "/projets/:slug/"
+workshops = "/workshops/:slug/"
 
 # -------------------------------------------------------------------------------------
 # Privacy Configuration
@@ -410,6 +386,8 @@ _merge = "shallow"
 category = "categories"
 tag = "tags"
 collection = "collections"
+technologie = "technologies"
+departement = "departements"
 
 # -------------------------------------------------------------------------------------
 # Theme Core Configuration
@@ -420,9 +398,9 @@ collection = "collections"
 # FixIt 0.2.15 | CHANGED FixIt theme version
 version = "0.4.X" # e.g. "0.2.X", "0.2.15", "v0.2.15" etc.
 # site description
-description = ""
+description = "L'Innovation Aérospatiale au Service du Développement National. AéroENSEM forme une génération d'ingénieurs pour le Maroc."
 # site keywords
-keywords = []
+keywords = ["AéroENSEM", "Innovation", "Aérospatiale", "Maroc", "Ingénierie", "ENSEM"]
 # site default theme ["light", "dark", "auto"]
 defaultTheme = "auto"
 # which hash function used for SRI, when empty, no SRI is used
@@ -497,9 +475,9 @@ dark = "#252627"
 
 # Search config
 [params.search]
-enable = false
+enable = true
 # type of search engine ["algolia", "fuse", "cse", "post-chat"]
-type = "fuse"
+type = "cse"
 # max index length of the chunked content
 contentLength = 4000
 # placeholder of the search bar
@@ -535,14 +513,14 @@ ignoreFieldNorm = false
 # FixIt 0.3.16 | NEW Custom Search Engine (CSE)
 [params.cse]
 # Search Engine: ["google", "bing"]
-engine = ""
+engine = "google"
 # Search results page URL (layout: search)
 resultsPage = "/search/"
 
 # Google: https://programmablesearchengine.google.com/
 # Google Custom Search Engine Context
 [params.cse.google]
-cx = ""
+cx = "71f4d7ad877004ae6"
 
 # Bing (Unsupported): https://www.customsearch.ai/
 [params.cse.bing]
@@ -557,7 +535,7 @@ mobileMode = "auto"
 # Header title config
 [params.header.title]
 # URL of the LOGO
-logo = ""
+logo = "/images/logo.png"
 # title name
 name = ""
 # you can add extra information before the name (HTML format is supported), such as icons
@@ -685,25 +663,25 @@ orderby = "name" # Order of tags, optional values: ["name", "count"]
 
 # Home page profile
 [params.home.profile]
-enable = false
+enable = true
 # FixIt 0.4.0 | NEW Whether to show profile and content only in the first home page
 onlyFirstPage = false
 # Gravatar Email for preferred avatar in home page
 gravatarEmail = ""
 # URL of avatar shown in home page, default is author's avatar
-avatarURL = ""
+avatarURL = "/images/logo.png"
 # FixIt 0.2.17 | NEW identifier of avatar menu link
 avatarMenu = ""
 # title shown in home page (HTML format is supported)
-title = ""
+title = "AéroENSEM"
 # subtitle shown in home page (HTML format is supported)
-subtitle = ""
+subtitle = "L'Innovation Aérospatiale au Service du Développement National"
 # whether to use typeit animation for subtitle
 typeit = true
 # whether to show social links
 social = true
 # disclaimer (HTML format is supported)
-disclaimer = ""
+disclaimer = "Notre club ne fait pas voler des drones, nous faisons décoller des solutions. Chaque projet combine excellence technique et impact sociétal, formant une génération d'ingénieurs conscients de leur rôle dans le développement du Maroc."
 
 # Home page posts
 [params.home.posts]
@@ -713,11 +691,11 @@ paginate = 6
 
 # FixIt 0.2.16 | CHANGED Social config about the author
 [params.social]
-GitHub = ""
+GitHub = "AeroENSEM"
 Linkedin = ""
 Twitter = ""
-Instagram = ""
-Facebook = ""
+Instagram = "club.aeronautique"
+Facebook = "Club.AeroEnsem"
 Telegram = ""
 Medium = ""
 Gitlab = ""
@@ -804,11 +782,14 @@ Email = ""
 RSS = true
 
 # custom social links like the following
-# [params.social.twitter]
-# id = "lruihao"
-# weight = 3
-# prefix = "https://twitter.com/"
-# Title = "Twitter"
+[params.social.linkedin_company]
+id = "club-aeroensem"
+weight = 1
+prefix = "https://www.linkedin.com/company/"
+Title = "LinkedIn"
+
+[params.social.linkedin_company.icon]
+class = "fab fa-linkedin"
 
 # [params.social.twitter.icon]
 # class = "fa-brands fa-x-twitter"
