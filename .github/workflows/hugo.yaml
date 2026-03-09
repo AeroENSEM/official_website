@@ -84,7 +84,7 @@ jobs:
             --minify \
             --buildFuture \
             --buildDrafts \
-            --baseURL "${{ steps.pages.outputs.base_url }}/" \
+            --baseURL "https://aeroensem.club/" \
             --cacheDir "${{ runner.temp }}/hugo_cache"
       - name: Cache save
         id: cache-save
