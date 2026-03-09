@@ -82,7 +82,8 @@ jobs:
           hugo build \
             --gc \
             --minify \
-            --baseURL "${{ steps.pages.outputs.base_url }}/" \
+            --buildFuture \
+            --buildDrafts \
             --cacheDir "${{ runner.temp }}/hugo_cache"
       - name: Cache save
         id: cache-save
