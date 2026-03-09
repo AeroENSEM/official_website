@@ -528,7 +528,7 @@ resultsPage = "/search/"
 # Google: https://programmablesearchengine.google.com/
 # Google Custom Search Engine Context
 [params.cse.google]
-cx = "71f4d7ad877004ae6"
+cx = "245fa364a138a4b6e"
 
 # Bing (Unsupported): https://www.customsearch.ai/
 [params.cse.bing]
